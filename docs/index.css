@@ -31,7 +31,7 @@ canvas {
     z-index: -1;
 }
 
-img {
+.avatar {
     opacity: 1;
     margin-top: 10%;
     border-radius: 50%;
@@ -61,4 +61,8 @@ div.container a {
     font-family: SAIBA-45, serif;
     font-size: 20px;
     text-decoration: none;
+}
+
+div.container a:hover {
+    color: #1755ff;
 }
