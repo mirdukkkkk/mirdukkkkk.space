@@ -9,4 +9,4 @@ Just make a local server on `./docs/index.html` (or open index.html in your brow
 ---
 
 ## It works just as well without JavaScript
-You can disable JavaScript on the site, it will work the same way, except with a random highlight color and no starry background
+You can disable JavaScript on the site, it will work the same way, except with a random highlight color, random greetings and no starry background
