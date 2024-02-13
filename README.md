@@ -1,7 +1,7 @@
 
 
 # Site with my links & contacts
-You can see an already live version at https://mirdukkkkkkkk.space
+You can see an already live version at https://mirdukkkkk.space
 
 ## How to run?
 Just make a local server on `./docs/index.html` (or open index.html in your browser)
