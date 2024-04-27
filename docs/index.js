@@ -22,4 +22,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.documentElement.style.setProperty('--text-highlight-color', colors[Math.floor(Math.random() * colors.length)])
     document.getElementById('greeting').innerText = greetings[Math.floor(Math.random() * greetings.length)];
-})
+});
