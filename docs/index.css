@@ -4,11 +4,15 @@
 }
 
 @font-face {
-    font-family: SAIBA-45;
-    src: url("fonts/SAIBA-45.otf");
+    font-family: WaffleSoft;
+    src: url("fonts/WaffleSoft.otf");
+    font-weight: 800;
 }
 
 * {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
     font-family: Comfortaa, serif;
     margin: 0;
     padding: 0;
@@ -31,37 +35,62 @@ canvas {
     z-index: -1;
 }
 
-.avatar {
-    margin-top: 10%;
-    border-radius: 50%;
-    width: 200px;
-}
-
-div.container {
+#container {
     text-align: center;
 }
 
-div.container header {
+#container span {
+    transition: color 0.2s linear;
+}
+
+#container header {
     font-size: 40px;
     padding-top: 20px;
     font-weight: 800;
 }
 
-div.container p {
+#container p {
     font-size: 25px;
 }
 
-div.container ul {
+#container ul {
     margin-top: 15px;
 }
 
-div.container a {
-    color: #1d32e1;
-    font-family: SAIBA-45, serif;
-    font-size: 20px;
+#container a {
+    font-family: WaffleSoft, serif;
+    font-size: 25px;
     text-decoration: none;
+    color: #14dab3;
+    transition: color 0.3s ease;
 }
 
-div.container a:hover {
-    color: #1755ff;
+#container a:hover {
+    color: #1955ff;
+}
+
+#avatar {
+    margin-top: 10%;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+
+#avatar:active {
+    transform: scale(0.95);
+}
+
+#information {
+    display: inline-block;
+}
+
+#information span {
+    white-space: nowrap;
+}
+
+#information img {
+    transition: transform 0.5s ease;
+}
+
+#information img:hover {
+    transform: rotateZ(360deg);
 }
