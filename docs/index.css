@@ -1,12 +1,11 @@
 @font-face {
     font-family: Comfortaa;
-    src: url("./fonts/Comfortaa.ttf") format('ttf');
+    src: url("fonts/Comfortaa.ttf");
 }
 
 @font-face {
-    font-family: WaffleSoft;
-    src: url("./fonts/WaffleSoft.otf") format('otf');
-    font-weight: 800;
+    font-family: SAIBA-45;
+    src: url("fonts/SAIBA-45.otf");
 }
 
 * {
@@ -16,7 +15,7 @@
 }
 
 html {
-    --text-highlight-color: #1755ff;
+    --text-highlight-color: #1755ff
 }
 
 body {
@@ -58,8 +57,8 @@ div.container ul {
 
 div.container a {
     color: #1d32e1;
-    font-family: WaffleSoft, serif;
-    font-size: 40px;
+    font-family: SAIBA-45, serif;
+    font-size: 20px;
     text-decoration: none;
 }
 
