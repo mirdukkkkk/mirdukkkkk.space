@@ -9,7 +9,8 @@ export default defineConfig({
     build: {
         rollupOptions: {
             input: {
-                main: resolve(__dirname, "index.html"),
+                home: resolve(__dirname, "index.html"),
+                clicker: resolve(__dirname, "clicker.html"),
                 404: resolve(__dirname, "404.html"),
             }
         }
