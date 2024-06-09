@@ -1,0 +1,10 @@
+.block {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.block div:first-child {
+    margin-top: 10%;
+}

@@ -1,0 +1,25 @@
+{
+  "type": "module",
+  "name": "mirdukkkkk.space",
+  "version": "1.0.0",
+  "main": "./src/index.tsx",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 8081",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 4750"
+  },
+  "author": "mirdukkkkk",
+  "license": "GPL-3.0-only",
+  "private": false,
+  "devDependencies": {
+    "@preact/preset-vite": "^2.8.2",
+    "@types/node": "^20.14.2",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.13"
+  },
+  "dependencies": {
+    "@preact/signals": "^1.2.3",
+    "preact": "^10.22.0",
+    "wouter": "^3.2.0"
+  }
+}
