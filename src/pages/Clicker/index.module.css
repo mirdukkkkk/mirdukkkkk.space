@@ -1,0 +1,30 @@
+.essence {
+    font-size: 80px;
+}
+
+.parrot {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #FFD102;
+
+    background-color: #aca02b;
+
+    transition: transform 0.1s linear;
+}
+
+.parrot img {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.parrot:active {
+    transform: scale(0.95);
+}

@@ -3,7 +3,9 @@ import {Route, Switch} from 'wouter';
 
 import Background from "./components/Background/Background";
 import Home from './pages/Home';
+import Clicker from './pages/Clicker';
 import NotFound from './pages/NotFound';
+
 
 import './styles/index.css';
 import styles from './styles/index.module.css';
@@ -18,6 +20,9 @@ class App extends Component {
                     <Switch>
                         <Route path="/">
                             <Home />
+                        </Route>
+                        <Route path="/clicker">
+                            <Clicker />
                         </Route>
                         <Route>
                             <NotFound />

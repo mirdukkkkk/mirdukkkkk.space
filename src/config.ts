@@ -17,7 +17,10 @@ const config = {
         "#f1d04f",
         "#ff3737",
         "#7fffec"
-    ]
+    ],
+    clicker: {
+        version: 1
+    }
 }
 
 export default config;
