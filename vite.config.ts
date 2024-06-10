@@ -5,7 +5,12 @@ import { resolve } from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [preact()],
+    plugins: [
+        preact({
+            devToolsEnabled: true,
+            devtoolsInProd: false
+        })
+    ],
     build: {
         rollupOptions: {
             input: {

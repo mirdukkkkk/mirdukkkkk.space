@@ -1,5 +1,5 @@
 import {Component} from "preact";
-import {useEffect, useLayoutEffect, useRef} from "preact/hooks";
+import {useRef} from "preact/hooks";
 import styles from './Background.module.css';
 
 class Background extends Component {
@@ -149,7 +149,7 @@ class Background extends Component {
         requestAnimationFrame(this.animate.bind(this));
     }
 
-    register() {
+    componentWillMount() {
         window.onresize = this.resize.bind(this);
         document.onmousemove = (event) => {
             this.touchInput = false;
@@ -168,18 +168,17 @@ class Background extends Component {
             this.pointerX = null;
             this.pointerY = null;
         }
+        console.info('[INFO] Background events are attached!');
+    }
+
+    componentDidMount() {
+        this.resize.bind(this)();
+        this.animate.bind(this)();
+        console.info('[INFO] Background animation started!');
     }
 
     render() {
         this.canvas = useRef<HTMLCanvasElement>(null);
-
-        useEffect(this.register.bind(this), []);
-
-        useLayoutEffect(() => {
-            this.resize.bind(this)();
-            this.animate.bind(this)();
-            console.info('[INFO] Stars animation started!');
-        }, []);
 
         return <canvas
             className={styles.background}

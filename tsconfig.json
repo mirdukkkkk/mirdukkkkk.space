@@ -16,7 +16,8 @@
         "paths": {
             "react": ["./node_modules/preact/compat/"],
             "react-dom": ["./node_modules/preact/compat/"]
-        }
+        },
+        "removeComments": true
     },
     "include": [
         "node_modules/preact/src/internal.d.ts",

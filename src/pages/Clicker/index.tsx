@@ -1,33 +1,32 @@
-import {Component} from "preact";
-import {useReducer} from "preact/hooks";
+import {Component, type ComponentChild} from "preact";
 import LocalStorage from "../../classes/LocalStorage";
 import config from "../../config";
 import styles from './index.module.css';
 
+type State = {
+    clicks: number;
+}
 
-class Clicker extends Component {
+class Clicker extends Component<ComponentChild, State> {
     version = { version: config.clicker.version };
 
-    reducer(state: number, action: string) {
-        switch(action) {
-            case 'inc':
-                return state += 1;
-            default:
-                throw new Error('Unexpected action')
+    constructor() {
+        super();
+
+        if(!LocalStorage.get('clicker')) LocalStorage.set('clicker', { ...this.version, clicks: 0 });
+        this.state = {
+            clicks: LocalStorage.get('clicker')!.clicks
         }
     }
 
     render() {
-        if(!LocalStorage.get('clicker')) LocalStorage.set('clicker', { ...this.version, clicks: 0 });
-        const [clicks, dispatch] = useReducer(this.reducer, LocalStorage.get('clicker')!.clicks);
-
         return (
             <>
                 <div
                     className={styles.essence}
                     translate={false}
                 >
-                    {clicks}
+                    {this.state.clicks}
                 </div>
 
                 <div
@@ -36,9 +35,9 @@ class Clicker extends Component {
                     onClick={() => {
                         LocalStorage.set('clicker', {
                             ...this.version,
-                            clicks: clicks + 1
+                            clicks: this.state.clicks + 1
                         });
-                        dispatch('inc');
+                        this.setState({ clicks: this.state.clicks + 1 });
                     }}
                 >
                     <img

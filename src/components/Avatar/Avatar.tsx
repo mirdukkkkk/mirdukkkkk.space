@@ -1,10 +1,10 @@
-import {Component, type ComponentChild} from 'preact';
+import {Component} from 'preact';
 import styles from './Avatar.module.css';
 
 type Props = {
-    width: number;
-    height: number;
-} & ComponentChild;
+    width: string | number;
+    height: string | number;
+}
 
 class Avatar extends Component<Props> {
     render(props: Props) {
