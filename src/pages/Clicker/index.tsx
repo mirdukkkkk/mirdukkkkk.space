@@ -23,7 +23,13 @@ class Clicker extends Component {
 
         return (
             <>
-                <div className={styles.essence}>{clicks}</div>
+                <div
+                    className={styles.essence}
+                    translate={false}
+                >
+                    {clicks}
+                </div>
+
                 <div
                     title="Click me!"
                     className={styles.parrot}
