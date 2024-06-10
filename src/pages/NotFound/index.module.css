@@ -1,0 +1,34 @@
+.essence {
+    font-size: 80px;
+}
+
+.essence p {
+    font-size: 40px;
+}
+
+.comment {
+    font-size: 25px;
+}
+
+.return {
+    margin-top: 10px;
+    display: inline-block;
+    font-size: 20px;
+    text-align: center;
+    color: #c1c7ff;
+}
+
+.return img {
+    vertical-align: text-top;
+    @media (hover: hover) {
+        transition: transform 0.3s ease;
+    }
+}
+
+.return:hover img {
+    transform: rotate(180deg);
+}
+
+.return:link, .return:visited {
+    text-decoration: none;
+}

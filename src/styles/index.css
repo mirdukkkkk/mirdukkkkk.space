@@ -1,0 +1,25 @@
+@font-face {
+    font-family: Comfortaa;
+    src: url("/fonts/Comfortaa.ttf") format("truetype");
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: WaffleSoft;
+    src: url("/fonts/WaffleSoft.otf") format("opentype");
+    font-weight: 800;
+}
+
+* {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    font-family: Comfortaa, serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+    color: white;
+}

@@ -1,0 +1,23 @@
+.header {
+    font-size: 40px;
+    padding-top: 20px;
+    font-weight: 800;
+}
+
+.information {
+    display: inline-block;
+}
+
+.information img {
+    transition: transform 0.5s ease;
+}
+
+p {
+    font-size: 25px;
+}
+
+@media (hover: hover) {
+    .information img:hover {
+        transform: rotateZ(360deg);
+    }
+}
