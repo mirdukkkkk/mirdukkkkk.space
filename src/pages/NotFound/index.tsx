@@ -19,7 +19,7 @@ class NotFound extends Component {
                         <p>you're <RainbowSpan>lost?</RainbowSpan></p>
                     </div>
 
-                    <Link href="/" className={styles.return}>
+                    <Link to="/" className={styles.return}>
                         click to return&nbsp;
                         <img
                             title="Return to home"

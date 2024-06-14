@@ -20,7 +20,10 @@
 
 .return img {
     vertical-align: text-top;
-    @media (hover: hover) {
+}
+
+@media (hover: hover) {
+    .return img {
         transition: transform 0.3s ease;
     }
 }

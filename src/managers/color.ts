@@ -3,7 +3,7 @@ import {type Signal, signal} from "@preact/signals";
 import config from "../config";
 
 export const ColorManager = {
-    color: signal(config.colors[Math.floor(Math.random() * config.colors.length)]) as Signal<string>,
+    color: signal(config.colors[Math.floor(Math.random() * config.colors.length)]),
     changeColor(random: boolean = false) {
         ColorManager.color.value = random
             ? config.colors[Math.floor(Math.random() * config.colors.length)]

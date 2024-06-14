@@ -1,24 +1,19 @@
-import {Component} from 'preact';
 import styles from './Avatar.module.css';
 
-type Props = {
+type AvatarProps = {
     width: string | number;
     height: string | number;
 }
 
-class Avatar extends Component<Props> {
-    render(props: Props) {
-        return (
-            <img
-                title="mirdukkkkk avatar"
-                className={styles.avatar}
-                alt="mirdukkkkk avatar"
-                width={props.width}
-                height={props.height}
-                src="https://avatars.githubusercontent.com/u/69540930?v=4"
-            />
-        );
-    }
-}
+const Avatar = ({ width, height }: AvatarProps) => (
+    <img
+        title="mirdukkkkk avatar"
+        className={styles.avatar}
+        alt="mirdukkkkk avatar"
+        width={width}
+        height={height}
+        src="/avatar.webp"
+    />
+);
 
 export default Avatar;

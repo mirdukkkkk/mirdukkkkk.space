@@ -1,0 +1,39 @@
+.header {
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: calc(100% - 20px);
+    font-size: 20px;
+}
+
+.left {
+    display: flex;
+    gap: 10px;
+    color: #14dab3;
+    flex-direction: row;
+}
+
+.right {
+    display: flex;
+    flex-direction: row;
+}
+
+.header a {
+    color: inherit;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.header a:visited {
+    color: inherit;
+}
+
+.header a:hover {
+    color: #1955ff;
+}
+
+.header a.active,
+.header a.active:visited {
+    color: #1955ff;
+}

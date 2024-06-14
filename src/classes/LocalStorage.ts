@@ -5,6 +5,7 @@ interface ClickerData {
 
 interface LocalStorageMap {
     clicker: ClickerData;
+    background: boolean
 }
 
 class LocalStorage {

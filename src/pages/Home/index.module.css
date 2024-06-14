@@ -12,12 +12,12 @@
     transition: transform 0.5s ease;
 }
 
-p {
-    font-size: 25px;
-}
-
 @media (hover: hover) {
     .information img:hover {
         transform: rotateZ(360deg);
     }
+}
+
+p {
+    font-size: 25px;
 }

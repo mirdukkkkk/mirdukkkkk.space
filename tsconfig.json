@@ -22,6 +22,6 @@
     "include": [
         "node_modules/preact/src/internal.d.ts",
         "node_modules/vite/client.d.ts",
-        "**/*"
+        "src/**/*"
     ]
 }

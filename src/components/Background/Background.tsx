@@ -1,9 +1,8 @@
-import {Component} from "preact";
-import {useRef} from "preact/hooks";
+import {Component, createRef} from "preact";
 import styles from './Background.module.css';
 
 class Background extends Component {
-    canvas!: Ref<HTMLCanvasElement>;
+    canvas = createRef<HTMLCanvasElement>();
 
     starSize = 6;
     starMinScale = 2.5e-10;
@@ -70,7 +69,7 @@ class Background extends Component {
     }
 
     animate() {
-        if(!this.canvas.current) return console.warn('[WARN] Stars animation failed (no canvas ref)');
+        if(!this.canvas.current) return;
         const context = this.canvas.current.getContext('2d')!;
 
         context.clearRect(0, 0, this.width, this.height);
@@ -149,6 +148,15 @@ class Background extends Component {
         requestAnimationFrame(this.animate.bind(this));
     }
 
+    componentWillUnmount() {
+        window.onresize = null;
+        document.onmousemove = null;
+        document.ontouchmove = null;
+        document.ontouchend = null;
+        document.onmouseleave = null;
+        console.info('[INFO] Background has been removed!');
+    }
+
     componentWillMount() {
         window.onresize = this.resize.bind(this);
         document.onmousemove = (event) => {
@@ -178,8 +186,6 @@ class Background extends Component {
     }
 
     render() {
-        this.canvas = useRef<HTMLCanvasElement>(null);
-
         return <canvas
             className={styles.background}
             ref={this.canvas}

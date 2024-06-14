@@ -1,13 +1,14 @@
 import {Component, type ComponentChild} from "preact";
+import {signal, type Signal} from "@preact/signals";
 import LocalStorage from "../../classes/LocalStorage";
 import config from "../../config";
 import styles from './index.module.css';
 
-type State = {
-    clicks: number;
+type ClickerState = {
+    clicks: Signal<number>;
 }
 
-class Clicker extends Component<ComponentChild, State> {
+class Clicker extends Component<ComponentChild, ClickerState> {
     version = { version: config.clicker.version };
 
     constructor() {
@@ -15,7 +16,7 @@ class Clicker extends Component<ComponentChild, State> {
 
         if(!LocalStorage.get('clicker')) LocalStorage.set('clicker', { ...this.version, clicks: 0 });
         this.state = {
-            clicks: LocalStorage.get('clicker')!.clicks
+            clicks: signal(LocalStorage.get('clicker')!.clicks)
         }
     }
 
@@ -32,13 +33,12 @@ class Clicker extends Component<ComponentChild, State> {
                 <div
                     title="Click me!"
                     className={styles.parrot}
-                    onClick={() => {
+                    onClick={() =>
                         LocalStorage.set('clicker', {
                             ...this.version,
-                            clicks: this.state.clicks + 1
-                        });
-                        this.setState({ clicks: this.state.clicks + 1 });
-                    }}
+                            clicks: (this.state.clicks.value++) + 1
+                        })
+                    }
                 >
                     <img
                         src="/images/parrot.svg"

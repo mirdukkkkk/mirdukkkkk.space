@@ -5,6 +5,6 @@
     flex-direction: column;
 }
 
-.block div:first-child {
-    margin-top: 10%;
+.indention {
+    margin-top: 8%;
 }
