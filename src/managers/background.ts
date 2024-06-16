@@ -1,5 +1,5 @@
 import {createContext} from "preact";
-import {signal, type Signal} from "@preact/signals";
+import {signal} from "@preact/signals";
 import LocalStorage from "../classes/LocalStorage";
 
 export const BackgroundManager = {

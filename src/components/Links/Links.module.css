@@ -1,16 +1,16 @@
-.list {
+.links {
     list-style-type: none;
     margin-top: 15px;
 }
 
-.list a {
+.links a {
     font-family: WaffleSoft, serif;
     font-size: 25px;
     text-decoration: none;
-    color: #14dab3;
+    color: var(--text);
     transition: color 0.3s ease;
 }
 
-.list a:hover {
-    color: #1955ff;
+.links a:hover {
+    color: var(--highlighted-text);
 }

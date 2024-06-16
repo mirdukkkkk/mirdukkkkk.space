@@ -934,11 +934,6 @@ update-browserslist-db@^1.0.16:
     escalade "^3.1.2"
     picocolors "^1.0.1"
 
-use-sync-external-store@^1.0.0:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.2.2.tgz#c3b6390f3a30eba13200d2302dcdf1e7b57b2ef9"
-  integrity sha512-PElTlVMwpblvbNqQ82d2n6RjStvdSoNe9FG28kNfz3WiXilJm4DdNkEzRhCZuIDwY8U08WVihhGR5iRqAwfDiw==
-
 vite@^5.2.13:
   version "5.2.13"
   resolved "https://registry.yarnpkg.com/vite/-/vite-5.2.13.tgz#945ababcbe3d837ae2479c29f661cd20bc5e1a80"
@@ -950,14 +945,13 @@ vite@^5.2.13:
   optionalDependencies:
     fsevents "~2.3.3"
 
-wouter@^3.2.0:
+wouter-preact@^3.2.0:
   version "3.2.0"
-  resolved "https://registry.yarnpkg.com/wouter/-/wouter-3.2.0.tgz#11dc10a7e02bb4895a76c3743c04232a383a99be"
-  integrity sha512-6g+5H4zYcGtqSte99EpZbgaZNfl1M9H5wk6fLwZ1p5vPRvsDdk4LqRKVz3ka0KHBcire4IuaFvM2zRsgt16t6g==
+  resolved "https://registry.yarnpkg.com/wouter-preact/-/wouter-preact-3.2.0.tgz#e5f20adeebc3f8de3d0a55aa27e2510c3339f3bf"
+  integrity sha512-OQC1B6do66QyxZvxbRmSVVY0/VQqcSYf+uUds2N/dExKQrsScs7rmQ5tjK1PI3v3S9Kjra6Rx1FIiHm7bOWi6A==
   dependencies:
     mitt "^3.0.1"
     regexparam "^3.0.0"
-    use-sync-external-store "^1.0.0"
 
 yallist@^3.0.2:
   version "3.1.1"

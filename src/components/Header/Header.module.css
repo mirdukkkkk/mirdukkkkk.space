@@ -1,5 +1,5 @@
 .header {
-    margin: 10px;
+    margin: 10px 10px 0;
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
@@ -10,7 +10,7 @@
 .left {
     display: flex;
     gap: 10px;
-    color: #14dab3;
+    color: var(--text);
     flex-direction: row;
 }
 
@@ -30,10 +30,10 @@
 }
 
 .header a:hover {
-    color: #1955ff;
+    color: var(--highlighted-text);
 }
 
 .header a.active,
 .header a.active:visited {
-    color: #1955ff;
+    color: var(--highlighted-text);
 }

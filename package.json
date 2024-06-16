@@ -20,6 +20,6 @@
   "dependencies": {
     "@preact/signals": "^1.2.3",
     "preact": "^10.22.0",
-    "wouter": "^3.2.0"
+    "wouter-preact": "^3.2.0"
   }
 }

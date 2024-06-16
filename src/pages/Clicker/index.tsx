@@ -24,7 +24,7 @@ class Clicker extends Component<ComponentChild, ClickerState> {
         return (
             <>
                 <div
-                    className={styles.essence}
+                    className={styles.title}
                     translate={false}
                 >
                     {this.state.clicks}

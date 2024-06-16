@@ -10,7 +10,7 @@ const RainbowSpan = ({ children }: RainbowSpanProps) => (
     <ColorContext.Consumer>
         {(manager) =>
             <span
-                className={styles.element}
+                className={styles.rainbow}
                 style={{ color: manager.color.value }}
                 onClick={() => manager.changeColor()}
             >

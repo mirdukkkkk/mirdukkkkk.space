@@ -1,5 +1,5 @@
 import {createContext} from "preact";
-import {type Signal, signal} from "@preact/signals";
+import {signal} from "@preact/signals";
 import config from "../config";
 
 export const ColorManager = {
@@ -11,8 +11,4 @@ export const ColorManager = {
     }
 }
 
-export function generateColorManager(initialvalue: string) {
-    return Object.assign(ColorManager, { color: signal(initialvalue) });
-}
-
-export const ColorContext = createContext({ } as typeof ColorManager);
+export const ColorContext = createContext({} as typeof ColorManager);
