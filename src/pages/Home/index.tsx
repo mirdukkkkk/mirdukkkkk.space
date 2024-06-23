@@ -1,31 +1,26 @@
 import {Component} from "preact";
 import styles from "./index.module.css";
-import config from "../../config";
 
 import Avatar from "../../components/Avatar/Avatar";
 import Links from "../../components/Links/Links";
-import RainbowSpan from "../../components/RainbowSpan/RainbowSpan";
+import RainbowSpan from "../../components/Functional/RainbowSpan/RainbowSpan";
+import Greeting from "../../components/Utility/Greeting/Greeting";
+import Country from "../../components/Utility/Country/Country";
 
 class Home extends Component {
-    greet() {
-        return config.greetings[Math.floor(Math.random() * config.greetings.length)];
-    }
-
     render() {
         return (
             <>
                 <Avatar width={200} height={200} />
                 <div className={styles.title}>
-                    <strong>{this.greet()}</strong>, i'm
+                    <Greeting/>, i'm
                     <div className={styles.information} translate={false}>
-                        <RainbowSpan>&nbsp;mirdukkkkk&nbsp;</RainbowSpan>
-                        <img
-                            className={styles.country}
-                            title="New Zealand"
-                            width="32"
-                            height="32"
-                            src="/images/flag_nz.svg"
-                            alt="New Zealand Flag"
+                        &nbsp;<RainbowSpan>mirdukkkkk</RainbowSpan>&nbsp;
+                        <Country
+                            width={32}
+                            height={32}
+                            name="New Zealand"
+                            code="nz"
                         />
                     </div>
                 </div>

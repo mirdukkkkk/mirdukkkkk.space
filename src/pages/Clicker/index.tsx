@@ -1,4 +1,4 @@
-import {Component, type ComponentChild} from "preact";
+import {Component, createRef} from "preact";
 import {signal, type Signal} from "@preact/signals";
 import LocalStorage from "../../classes/LocalStorage";
 import config from "../../config";
@@ -8,8 +8,9 @@ type ClickerState = {
     clicks: Signal<number>;
 }
 
-class Clicker extends Component<ComponentChild, ClickerState> {
+class Clicker extends Component<{}, ClickerState> {
     version = { version: config.clicker.version };
+    counterRef = createRef<HTMLDivElement>();
 
     constructor() {
         super();
@@ -20,12 +21,26 @@ class Clicker extends Component<ComponentChild, ClickerState> {
         }
     }
 
+    handleClick() {
+        const clicks = this.state.clicks.value + 1;
+        this.state.clicks.value = clicks;
+        LocalStorage.set('clicker', { ...this.version, clicks });
+
+        const counter = this.counterRef.current;
+        if(counter) {
+            counter.classList.remove(styles.animate);
+            void counter.offsetWidth;
+            counter.classList.add(styles.animate);
+        }
+    }
+
     render() {
         return (
             <>
                 <div
                     className={styles.title}
                     translate={false}
+                    ref={this.counterRef}
                 >
                     {this.state.clicks}
                 </div>
@@ -33,12 +48,7 @@ class Clicker extends Component<ComponentChild, ClickerState> {
                 <div
                     title="Click me!"
                     className={styles.parrot}
-                    onClick={() =>
-                        LocalStorage.set('clicker', {
-                            ...this.version,
-                            clicks: (this.state.clicks.value++) + 1
-                        })
-                    }
+                    onClick={this.handleClick.bind(this)}
                 >
                     <img
                         src="/images/parrot.svg"

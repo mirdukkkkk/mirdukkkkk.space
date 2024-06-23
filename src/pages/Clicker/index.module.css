@@ -31,3 +31,19 @@
 .parrot:active {
     transform: scale(0.95);
 }
+
+.animate {
+    animation: scaleUp 0.15s ease-out;
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

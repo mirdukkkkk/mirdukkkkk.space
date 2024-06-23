@@ -1,7 +1,7 @@
 import {Component} from "preact";
 import {Link} from "wouter-preact";
 import {BackgroundContext, type BackgroundManager} from "../../managers/background";
-import Checkbox from "../Checkbox/Checkbox";
+import Checkbox from "../Functional/Checkbox/Checkbox";
 import styles from './Header.module.css';
 
 class Header extends Component {

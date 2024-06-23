@@ -19,7 +19,7 @@ class App extends Component {
         return (
             <BackgroundContext.Provider value={BackgroundManager}>
                 <BackgroundContext.Consumer>
-                    {(manager) => manager.isEnabled.value && <Background />}
+                    {() => BackgroundManager.isEnabled.value && <Background />}
                 </BackgroundContext.Consumer>
                 <div className={styles.block}>
                     <Header />

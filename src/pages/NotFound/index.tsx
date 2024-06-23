@@ -4,7 +4,7 @@ import styles from './index.module.css';
 
 import {ColorContext, type ColorManager} from "../../managers/color";
 
-import RainbowSpan from "../../components/RainbowSpan/RainbowSpan";
+import RainbowSpan from "../../components/Functional/RainbowSpan/RainbowSpan";
 
 class NotFound extends Component {
     declare context: typeof ColorManager;
