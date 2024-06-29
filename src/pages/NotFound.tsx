@@ -1,17 +1,18 @@
 import {Component} from "preact";
 import {Link} from "wouter-preact";
-import styles from './index.module.css';
+import styles from '../styles/pages/NotFound.module.css';
 
-import {ColorContext, type ColorManager} from "../../managers/color";
+import {ColorContext, type ColorManager} from "../managers/color";
+import colors from "../data/colors";
 
-import RainbowSpan from "../../components/Functional/RainbowSpan/RainbowSpan";
+import RainbowSpan from "../components/Functional/RainbowSpan/RainbowSpan";
 
 class NotFound extends Component {
     declare context: typeof ColorManager;
     static contextType = ColorContext;
 
     componentWillMount() {
-        this.context.color.value = '#ff3737';
+        this.context.color.value = colors.danger;
     }
 
     render() {
@@ -37,7 +38,7 @@ class NotFound extends Component {
                     />
                 </Link>
             </>
-        )
+        );
     }
 }
 

@@ -19,7 +19,7 @@ class RainbowSpan extends Component {
             >
                 {children}
             </span>
-        )
+        );
     }
 }
 

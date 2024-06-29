@@ -1,11 +1,11 @@
 import {Component} from "preact";
-import styles from "./index.module.css";
+import styles from "../styles/pages/Home.module.css";
 
-import Avatar from "../../components/Avatar/Avatar";
-import Links from "../../components/Links/Links";
-import RainbowSpan from "../../components/Functional/RainbowSpan/RainbowSpan";
-import Greeting from "../../components/Utility/Greeting/Greeting";
-import Country from "../../components/Utility/Country/Country";
+import Avatar from "../components/Avatar/Avatar";
+import Links from "../components/Links/Links";
+import RainbowSpan from "../components/Functional/RainbowSpan/RainbowSpan";
+import Greeting from "../components/Utility/Greeting/Greeting";
+import Country from "../components/Utility/Country/Country";
 
 class Home extends Component {
     render() {
@@ -28,7 +28,7 @@ class Home extends Component {
                 <p className={styles.additional}><RainbowSpan>junior</RainbowSpan> developer</p>
                 <Links/>
             </>
-        )
+        );
     }
 }
 

@@ -28,7 +28,7 @@ class Background extends Component {
         this.spawn();
     }
 
-    spawn() {
+    spawn = () => {
         const starCount = (window.innerWidth + window.innerHeight) /
             (navigator.userAgent.indexOf('Firefox') > -1 ? 18 : 11);
 
@@ -41,7 +41,7 @@ class Background extends Component {
         console.info('[INFO] Stars spawned successfully!');
     }
 
-    movePointer(x: number, y: number) {
+    movePointer = (x: number, y: number) => {
         if(typeof this.pointerX === 'number' && typeof this.pointerY === 'number') {
             let ox = x - this.pointerX;
             let oy = y - this.pointerY;
@@ -54,7 +54,7 @@ class Background extends Component {
         this.pointerY = y;
     }
 
-    resize() {
+    resize = () => {
         if(!this.canvas.current) return;
 
         this.width = window.innerWidth * this.scale;
@@ -68,7 +68,7 @@ class Background extends Component {
         });
     }
 
-    animate() {
+    animate = () => {
         if(!this.canvas.current) return;
         const context = this.canvas.current.getContext('2d')!;
 
@@ -145,7 +145,7 @@ class Background extends Component {
             context.stroke();
         });
 
-        requestAnimationFrame(this.animate.bind(this));
+        requestAnimationFrame(this.animate);
     }
 
     componentWillUnmount() {
@@ -158,7 +158,7 @@ class Background extends Component {
     }
 
     componentWillMount() {
-        window.onresize = this.resize.bind(this);
+        window.onresize = this.resize;
         document.onmousemove = (event) => {
             this.touchInput = false;
             this.movePointer(event.clientX, event.clientY);
@@ -180,16 +180,18 @@ class Background extends Component {
     }
 
     componentDidMount() {
-        this.resize.bind(this)();
-        this.animate.bind(this)();
+        this.resize();
+        this.animate();
         console.info('[INFO] Background animation started!');
     }
 
     render() {
-        return <canvas
-            className={styles.background}
-            ref={this.canvas}
-        />;
+        return (
+            <canvas
+                className={styles.background}
+                ref={this.canvas}
+            />
+        );
     }
 }
 

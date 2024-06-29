@@ -2,7 +2,7 @@
   "type": "module",
   "name": "mirdukkkkk.space",
   "version": "2.0.0",
-  "main": "./src/index.tsx",
+  "main": "src/index.tsx",
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port 8081",
     "build": "vite build",
