@@ -28,7 +28,7 @@ class Niko extends Component {
     }
 
     playAudio = async() => {
-        const audio = new Audio('/niko/shoeshine.ogg');
+        const audio = new Audio('/oneshot/shoeshine.ogg');
         Object.assign(audio, {
             preload: 'metadata',
             autoplay: true,
@@ -62,7 +62,7 @@ class Niko extends Component {
         return (
             <>
                 <video
-                    src='/niko/niko-oneshot.mp4'
+                    src='/oneshot/niko-oneshot.mp4'
                     className={styles.video}
                     ref={this.video}
                     playsinline
