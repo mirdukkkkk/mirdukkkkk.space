@@ -15,6 +15,7 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 home: resolve(__dirname, "index.html"),
+                niko: resolve(__dirname, "niko.html"),
                 clicker: resolve(__dirname, "clicker.html"),
                 404: resolve(__dirname, "404.html"),
             }
