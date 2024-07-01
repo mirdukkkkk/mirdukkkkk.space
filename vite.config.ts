@@ -27,6 +27,6 @@ export default defineConfig({
                 }
             }
         },
-        modulePreload: false
+        modulePreload: true
     }
 });
