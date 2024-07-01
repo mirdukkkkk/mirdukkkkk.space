@@ -17,8 +17,16 @@ export default defineConfig({
                 home: resolve(__dirname, "index.html"),
                 niko: resolve(__dirname, "niko.html"),
                 clicker: resolve(__dirname, "clicker.html"),
-                404: resolve(__dirname, "404.html"),
+                404: resolve(__dirname, "404.html")
+            },
+            output: {
+                manualChunks(id) {
+                    if(/node_modules\/.*preact.*/.test(id)) {
+                        return 'preact';
+                    }
+                }
             }
-        }
+        },
+        modulePreload: false
     }
 });
