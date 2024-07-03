@@ -14,16 +14,22 @@ import styles from './styles/index.module.css';
 class App extends Component {
     isException = renderExceptions.includes(window.location.pathname);
 
+    backgroundSwitcher = () => {
+        return (
+            BackgroundManager.isEnabled.value &&
+            !this.isException
+        ) && <Background />;
+    }
+
     componentWillMount() {
         BackgroundManager.load();
     }
 
     render() {
-
         return (
             <BackgroundContext.Provider value={BackgroundManager}>
                 <BackgroundContext.Consumer>
-                    {() => (BackgroundManager.isEnabled.value && !this.isException) && <Background />}
+                    {this.backgroundSwitcher}
                 </BackgroundContext.Consumer>
                 <div className={styles.block}>
                     {!this.isException &&

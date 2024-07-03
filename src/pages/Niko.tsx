@@ -1,16 +1,9 @@
 import {Component, createRef} from "preact";
-import {BackgroundContext, type BackgroundManager} from "../managers/background";
 import styles from '../styles/pages/Niko.module.css';
 
 class Niko extends Component {
-    declare context: typeof BackgroundManager;
-    static contextType = BackgroundContext;
     slide = createRef<HTMLDivElement>();
     video = createRef<HTMLVideoElement>();
-
-    constructor() {
-        super();
-    }
 
     createImage = (width: number, height: number) => {
         if(!this.video.current) return;
@@ -47,8 +40,6 @@ class Niko extends Component {
     }
 
     componentWillMount() {
-        this.context.toggle(false);
-
         document.body.addEventListener('click', this.handleEvent);
         document.body.addEventListener('keydown', this.handleEvent);
 

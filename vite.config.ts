@@ -16,6 +16,7 @@ export default defineConfig({
             input: {
                 home: resolve(__dirname, "index.html"),
                 niko: resolve(__dirname, "niko.html"),
+                skills: resolve(__dirname, "skills.html"),
                 clicker: resolve(__dirname, "clicker.html"),
                 404: resolve(__dirname, "404.html")
             },

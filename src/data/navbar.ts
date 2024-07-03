@@ -4,7 +4,7 @@ export default [
         path: '/'
     },
     {
-        name: 'Clicker',
-        path: '/clicker'
+        name: 'Skills',
+        path: '/skills'
     }
-]
+];

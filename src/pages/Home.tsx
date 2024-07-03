@@ -24,8 +24,8 @@ class Home extends Component {
                         />
                     </div>
                 </div>
-                <p className={styles.additional}>node.js, web</p>
-                <p className={styles.additional}><RainbowSpan>junior</RainbowSpan> developer</p>
+                <p>node.js, web</p>
+                <p><RainbowSpan>junior</RainbowSpan> developer</p>
                 <Links/>
             </>
         );

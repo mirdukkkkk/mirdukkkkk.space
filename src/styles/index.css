@@ -16,3 +16,7 @@ body {
     background-color: black;
     color: white;
 }
+
+p {
+    font-size: 25px;
+}
