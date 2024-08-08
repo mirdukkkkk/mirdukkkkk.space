@@ -1,6 +1,6 @@
 import {Component, createRef} from "preact";
 import config from "../../config";
-import styles from './Background.module.css';
+import styles from './Background.module.styl';
 
 type BackgroundProps = {
     starColor: string;

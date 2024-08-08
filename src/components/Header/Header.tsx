@@ -3,7 +3,7 @@ import {Link} from "wouter-preact";
 import {BackgroundContext, type BackgroundManager} from "../../managers/background";
 import Checkbox from "../Functional/Checkbox/Checkbox";
 import navbar from "../../data/navbar";
-import styles from './Header.module.css';
+import styles from './Header.module.styl';
 
 const NavLink = process.env.NODE_ENV === 'development'
     ? Object.assign(Link, { displayName: 'NavLink' })

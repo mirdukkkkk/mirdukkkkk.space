@@ -5,7 +5,7 @@ import Links from "../components/Links/Links";
 import RainbowSpan from "../components/Functional/RainbowSpan/RainbowSpan";
 import Greeting from "../components/Utility/Greeting/Greeting";
 import Country from "../components/Utility/Country/Country";
-import styles from "../styles/pages/Home.module.css";
+import styles from "../styles/pages/Home.module.styl";
 
 class Home extends Component {
     declare context: typeof BackgroundManager;

@@ -2,7 +2,7 @@ import {Component, createRef} from "preact";
 import {signal, type Signal} from "@preact/signals";
 import LocalStorage from "../classes/LocalStorage";
 import config from "../config";
-import styles from '../styles/pages/Clicker.module.css';
+import styles from '../styles/pages/Clicker.module.styl';
 
 type ClickerState = {
     clicks: Signal<number>;

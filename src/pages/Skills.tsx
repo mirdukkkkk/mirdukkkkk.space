@@ -2,7 +2,7 @@ import {Component, Fragment} from "preact";
 import Title from "../components/Template/Title/Title";
 import RainbowSpan from "../components/Functional/RainbowSpan/RainbowSpan";
 import skills, {selectedSkills, additional} from "../data/skills";
-import styles from '../styles/pages/Skills.module.css';
+import styles from '../styles/pages/Skills.module.styl';
 
 class Skills extends Component {
     render() {

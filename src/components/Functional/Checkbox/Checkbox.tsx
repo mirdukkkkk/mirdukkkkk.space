@@ -1,6 +1,6 @@
 import {type ComponentChildren} from "preact";
 import {type Signal} from "@preact/signals";
-import styles from './Checkbox.module.css';
+import styles from './Checkbox.module.styl';
 
 type CheckboxProps = {
     name: string;

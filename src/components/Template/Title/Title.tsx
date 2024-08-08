@@ -1,5 +1,5 @@
 import {type ComponentChildren} from "preact";
-import styles from "./Title.module.css";
+import styles from "./Title.module.styl";
 
 type TitleProps = {
     children: ComponentChildren;

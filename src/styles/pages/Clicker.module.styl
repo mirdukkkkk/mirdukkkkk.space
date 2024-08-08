@@ -1,0 +1,39 @@
+.title
+  font-size 80px
+
+.parrot
+  width 200px
+  height 200px
+  overflow hidden
+  display flex
+  align-items center
+  justify-content center
+  background-color #aca02b
+
+  border-radius 50%
+  border-width 5px
+  border-style solid
+  border-color #FFD102
+
+  transition transform 0.1s linear
+
+.parrot > img
+  width 80%
+  height 80%
+  max-width 80%
+  max-height 80%
+  pointer-events none
+
+.parrot:active
+  transform scale(0.95)
+
+.animate
+  animation scaleUp 0.15s ease-out
+
+@keyframes scaleUp
+  0%
+    transform scale(1)
+  50%
+    transform scale(1.1)
+  100%
+    transform scale(1)

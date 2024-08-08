@@ -7,8 +7,8 @@ import Background from "./components/Background/Background";
 import Header from "./components/Header/Header";
 import Router from "./router";
 
-import './styles/font.css';
-import './styles/index.css';
+import './styles/font.styl';
+import './styles/index.styl';
 
 import './helloConsole';
 

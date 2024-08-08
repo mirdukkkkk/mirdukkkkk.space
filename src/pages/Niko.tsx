@@ -1,5 +1,5 @@
 import {Component, createRef} from "preact";
-import styles from '../styles/pages/Niko.module.css';
+import styles from '../styles/pages/Niko.module.styl';
 
 class Niko extends Component {
     slide = createRef<HTMLDivElement>();

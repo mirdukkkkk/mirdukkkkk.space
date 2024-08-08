@@ -1,7 +1,6 @@
 import {Component, type ComponentChildren, createRef} from "preact";
-import {computed} from "@preact/signals";
 import {ColorContext, type ColorManager} from "../../../managers/color";
-import styles from './RainbowSpan.module.css';
+import styles from './RainbowSpan.module.styl';
 
 type RainbowSpanProps = {
     children: ComponentChildren;

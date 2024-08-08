@@ -1,48 +1,38 @@
-.slide {
-    top: 0;
-    left: 0;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-    background: url("/niko/niko-oneshot.jpg");
-    animation: diagonal 16s linear infinite;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
-}
+full =
+  position absolute
+  top 0
+  left 0
+  margin 0
+  width 100%
+  height 100%
 
-.video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-    overflow: hidden;
-}
+.slide
+  background black
+  display flex
+  justify-content center
+  align-items center
+  font-size 2em
+  background url("/niko/niko-oneshot.jpg")
+  animation diagonal 16s linear infinite
+  -webkit-text-stroke-width 1px
+  -webkit-text-stroke-color black
+  {full}
 
-.text {
-    font-family: "Comic Sans MS", monospace;
-    color: white;
-    font-size: 10vw
-}
+.video
+  object-fit fill
+  overflow hidden
+  {full}
 
-@keyframes diagonal {
-    0% {
-        background-position-x: 0;
-        background-position-y: 0;
-    }
+.text
+  font-family "Comic Sans MS", monospace
+  color white
+  font-size 10vw
 
-    100% {
-        background-position-x: 100%;
-        background-position-y: 100%;
-    }
-}
+@keyframes diagonal
+  for step in 0% 100%
+    {step}
+      for pos in x y
+        background-position-{pos} step
 
 /*
 ⢴⡲⢖⠶⡲⢖⠶⡲⡲⡲⡲⡲⡲⡲⡲⡲⡲⡲⡲⡲⡲⡲⡲⡲⡲⡲⡲⡲⡲⡲⡲⡲⡲⡲⡲⡲⡲⡲⡲⡲⡲⡲⢖⠶⡲⡖⡶⡲⡖⡶⡲⡖⡶⡲⣖⢖⢖⠦⡲⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⢔⢶⢲⢖⠶⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀

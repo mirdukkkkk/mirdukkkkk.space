@@ -1,0 +1,29 @@
+.header
+  margin 10px 10px 0
+  display flex
+  justify-content space-between
+  box-sizing border-box
+  width calc(100% - 20px)
+  font-size 20px
+
+.right
+  display flex
+  flex-direction row
+
+.left
+  @extend .right
+  gap 10px
+  color var(--text)
+
+.header a
+  color inherit
+  transition color .3s ease
+  text-decoration none
+
+.header a:visited
+  color inherit
+
+.header a:hover,
+.header a.active,
+.header a.active:visited
+  color var(--highlighted-text)

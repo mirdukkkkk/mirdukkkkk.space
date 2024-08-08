@@ -19,6 +19,7 @@
     "@preact/preset-vite": "^2.8.2",
     "@rollup/plugin-replace": "^5.0.7",
     "@types/node": "^20.14.2",
+    "stylus": "^0.63.0",
     "terser": "^5.31.4",
     "typescript": "^5.4.5",
     "vite": "^5.2.13"

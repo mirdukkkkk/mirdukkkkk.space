@@ -1,4 +1,4 @@
-import styles from './Avatar.module.css';
+import styles from './Avatar.module.styl';
 
 type AvatarProps = {
     width: string | number;

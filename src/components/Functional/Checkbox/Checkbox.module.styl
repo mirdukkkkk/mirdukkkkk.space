@@ -1,0 +1,28 @@
+.container
+  align-items center
+  display flex
+  gap 10px
+
+.check
+  appearance none
+  display grid
+  place-items center
+  width 20px
+  height 20px
+  outline 1px solid #FFFFFF
+  border-radius 2px
+  cursor pointer
+  flex-shrink 0
+
+.check::after
+  content ""
+  display block
+  width 12px
+  height 12px
+  border-radius 2px
+  background-color #FFFFFF
+  transform scale(0)
+  transition transform 0.1s ease-in
+
+.check:checked::after
+  transform scale(1)

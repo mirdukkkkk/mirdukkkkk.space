@@ -1,4 +1,4 @@
-import styles from './Links.module.css';
+import styles from './Links.module.styl';
 import links from "../../data/links";
 
 const Links = () => (
