@@ -17,7 +17,7 @@ class Home extends Component {
                 <Avatar
                     width={200}
                     height={200}
-                    onClick={this.context.nextStarColor}
+                    onClick={() => this.context.nextStarColor()}
                 />
 
                 <div className={styles.title}>

@@ -5,6 +5,7 @@ import preact from '@preact/preset-vite';
 import {resolve} from 'path';
 import {readFileSync} from 'fs';
 
+import variables from './src/styles/variables';
 import config from './src/config';
 
 function getVersion() {
@@ -44,12 +45,6 @@ export default defineConfig({
         },
         minify: 'terser',
         terserOptions: {
-            mangle: {
-                properties: {
-                    regex: /^_/,
-                    keep_quoted: true
-                }
-            },
             compress: {
                 drop_debugger: true,
                 ecma: 2020,
@@ -71,7 +66,18 @@ export default defineConfig({
                 comments: false
             }
         },
+        cssCodeSplit: true,
         modulePreload: true,
         sourcemap: true
+    },
+    css: {
+        preprocessorOptions: {
+            styl: {
+                compress: true,
+                additionalData: variables.map(([name, value]) =>
+                    `$${name} = ${value}`
+                ).join('\n')
+            }
+        }
     }
 });
