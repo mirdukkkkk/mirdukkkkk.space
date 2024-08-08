@@ -1,30 +1,31 @@
 import {Component, createRef} from "preact";
+import config from "../../config";
 import styles from './Background.module.css';
 
-class Background extends Component {
+type BackgroundProps = {
+    starColor: string;
+    starSpeed: number;
+}
+
+class Background extends Component<BackgroundProps> {
     canvas = createRef<HTMLCanvasElement>();
 
     starSize = 6;
     starMinScale = 2.5e-10;
-    starColor = '#FFFFFF';
     stars: { x: number, y: number, z: number }[] = [];
     starVelocity  = { x: 0, y: 0, tx: 0, ty: 0, z: 0.0005 };
 
-    scale = 0.5;
+    scale = config.background.scale;
     overflowThreshold = 50;
-    pointerX: number | null;
-    pointerY: number | null;
-    touchInput: boolean;
+    pointerX: number | null = null;
+    pointerY: number | null = null
+    touchInput: boolean = false;
 
     width = window.innerWidth * this.scale;
     height = window.innerHeight * this.scale;
 
     constructor() {
         super();
-
-        this.pointerX = null;
-        this.pointerY = null;
-        this.touchInput = false;
         this.spawn();
     }
 
@@ -132,7 +133,7 @@ class Background extends Component {
             context.lineCap = 'round';
             context.lineWidth = this.starSize * star.z * this.scale;
             context.globalAlpha = 0.5 + 0.5 * Math.random();
-            context.strokeStyle = this.starColor;
+            context.strokeStyle = this.props.starColor;
             context.beginPath();
             context.moveTo(star.x, star.y);
             let tailX = this.starVelocity.x * 2,
@@ -155,6 +156,10 @@ class Background extends Component {
         document.ontouchend = null;
         document.onmouseleave = null;
         console.info('[INFO] Background has been removed!');
+    }
+
+    componentWillReceiveProps(props: BackgroundProps) {
+        this.starVelocity.z = props.starSpeed;
     }
 
     componentWillMount() {

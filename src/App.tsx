@@ -9,7 +9,8 @@ import Router from "./router";
 
 import './styles/font.css';
 import './styles/index.css';
-import styles from './styles/index.module.css';
+
+import './helloConsole';
 
 class App extends Component {
     isException = renderExceptions.includes(window.location.pathname);
@@ -18,7 +19,10 @@ class App extends Component {
         return (
             BackgroundManager.isEnabled.value &&
             !this.isException
-        ) && <Background />;
+        ) && <Background
+            starColor={BackgroundManager.starColor.value}
+            starSpeed={BackgroundManager.starSpeed.value}
+        />;
     }
 
     componentWillMount() {
@@ -31,11 +35,16 @@ class App extends Component {
                 <BackgroundContext.Consumer>
                     {this.backgroundSwitcher}
                 </BackgroundContext.Consumer>
-                <div className={styles.block}>
+                <div style={{
+                    display: 'flex',
+                    textAlign: 'center',
+                    alignItems: 'center',
+                    flexDirection: 'column'
+                }}>
                     {!this.isException &&
                         <>
                             <Header />
-                            <div className={styles.indention} />
+                            <div style={{ marginTop: '10vh' }} />
                         </>
                     }
                     <ColorContext.Provider value={ColorManager}>

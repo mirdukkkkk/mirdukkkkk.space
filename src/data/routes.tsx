@@ -5,7 +5,7 @@ import Clicker from "../pages/Clicker";
 import NotFound from "../pages/NotFound";
 import Skills from "../pages/Skills";
 
-export const renderExceptions = ['/niko'];
+export const renderExceptions = ['/niko', '/oneshot'];
 
 export default [
     {

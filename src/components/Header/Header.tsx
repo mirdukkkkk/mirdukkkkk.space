@@ -5,6 +5,10 @@ import Checkbox from "../Functional/Checkbox/Checkbox";
 import navbar from "../../data/navbar";
 import styles from './Header.module.css';
 
+const NavLink = process.env.NODE_ENV === 'development'
+    ? Object.assign(Link, { displayName: 'NavLink' })
+    : Link;
+
 class Header extends Component {
     declare context: typeof BackgroundManager;
     static contextType = BackgroundContext;
@@ -25,7 +29,7 @@ class Header extends Component {
             <header className={styles.header}>
                 <div className={styles.left}>
                     {navbar.map(({ name, path }) =>
-                        <Link to={path} className={this.stylize}>{name}</Link>
+                        <NavLink to={path} className={this.stylize}>{name}</NavLink>
                     )}
                 </div>
                 <div className={styles.right}>

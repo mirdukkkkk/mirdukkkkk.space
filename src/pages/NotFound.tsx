@@ -1,27 +1,26 @@
 import {Component} from "preact";
 import {Link} from "wouter-preact";
-import styles from '../styles/pages/NotFound.module.css';
-
 import {ColorContext, type ColorManager} from "../managers/color";
-import colors from "../data/colors";
-
+import {span} from "../data/colors";
 import RainbowSpan from "../components/Functional/RainbowSpan/RainbowSpan";
+import Title from "../components/Template/Title/Title";
+import styles from '../styles/pages/NotFound.module.css';
 
 class NotFound extends Component {
     declare context: typeof ColorManager;
     static contextType = ColorContext;
 
     componentWillMount() {
-        this.context.color.value = colors.danger;
+        this.context.color.value = span.danger;
     }
 
     render() {
         return (
             <>
-                <div className={styles.title}>
+                <Title>
                     <RainbowSpan>404</RainbowSpan>
-                    <p>Not Found</p>
-                </div>
+                    <p className={styles.additional}>Not Found</p>
+                </Title>
                 <div className={styles.comment}>
                     <p>page <RainbowSpan>doesn't</RainbowSpan> exist</p>
                     <p>you're <RainbowSpan>lost?</RainbowSpan></p>

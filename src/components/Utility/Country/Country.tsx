@@ -4,9 +4,10 @@ type CountryProps = {
     height: number | string;
     name: string;
     code: string;
+    onClick?: () => any
 }
 
-const Country = ({ className, width, height, name, code }: CountryProps) => (
+const Country = ({ className, width, height, name, code, onClick }: CountryProps) => (
     <img
         className={className}
         title={name}
@@ -14,6 +15,7 @@ const Country = ({ className, width, height, name, code }: CountryProps) => (
         height={height}
         src={`/images/flag_${code}.svg`}
         alt={`${name} Flag`}
+        onClick={onClick}
     />
 );
 

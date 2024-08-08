@@ -1,11 +1,16 @@
-interface ClickerData {
+export interface ClickerData {
     version: number;
     clicks: number;
 }
 
-interface LocalStorageMap {
+export interface BackgroundData {
+    isEnabled: boolean;
+    starColor: string;
+}
+
+export interface LocalStorageMap {
     clicker: ClickerData;
-    background: boolean
+    background: BackgroundData
 }
 
 class LocalStorage {

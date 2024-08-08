@@ -1,8 +1,4 @@
-.title {
-    font-size: 80px;
-}
-
-.title p {
+.additional {
     font-size: 40px;
 }
 
@@ -11,7 +7,7 @@
 }
 
 .return {
-    margin-top: 10px;
+    padding-top: 10px;
     display: inline-block;
     font-size: 20px;
     text-align: center;

@@ -1,7 +1,15 @@
-import { defineConfig } from 'vite';
+import {defineConfig} from 'vite';
+import replace from '@rollup/plugin-replace';
 import preact from '@preact/preset-vite';
 
-import { resolve } from 'path';
+import {resolve} from 'path';
+import {readFileSync} from 'fs';
+
+import config from './src/config';
+
+function getVersion() {
+    return JSON.parse(readFileSync('package.json').toString()).version;
+}
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -9,10 +17,16 @@ export default defineConfig({
         preact({
             devToolsEnabled: true,
             devtoolsInProd: false
+        }),
+        replace({
+            __NICKNAME__: config.nickname,
+            __APP_VERSION__: getVersion(),
+            preventAssignment: true
         })
     ],
     build: {
         rollupOptions: {
+            treeshake: 'recommended',
             input: {
                 home: resolve(__dirname, "index.html"),
                 niko: resolve(__dirname, "niko.html"),
@@ -23,11 +37,41 @@ export default defineConfig({
             output: {
                 manualChunks(id) {
                     if(/node_modules\/.*preact.*/.test(id)) {
-                        return 'preact';
+                        return 'lib';
                     }
                 }
             }
         },
-        modulePreload: true
+        minify: 'terser',
+        terserOptions: {
+            mangle: {
+                properties: {
+                    regex: /^_/,
+                    keep_quoted: true
+                }
+            },
+            compress: {
+                drop_debugger: true,
+                ecma: 2020,
+                module: true,
+                passes: 3,
+                toplevel: true,
+                unsafe: true,
+                unsafe_arrows: true,
+                unsafe_comps: true,
+                unsafe_Function: true,
+                unsafe_math: true,
+                unsafe_symbols: true,
+                unsafe_methods: true,
+                unsafe_proto: true,
+                unsafe_regexp: true,
+                unsafe_undefined: true
+            },
+            format: {
+                comments: false
+            }
+        },
+        modulePreload: true,
+        sourcemap: true
     }
 });

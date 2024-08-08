@@ -3,9 +3,10 @@ import styles from './Avatar.module.css';
 type AvatarProps = {
     width: string | number;
     height: string | number;
+    onClick?: () => any
 }
 
-const Avatar = ({ width, height }: AvatarProps) => (
+const Avatar = ({ width, height, onClick }: AvatarProps) => (
     <img
         title="mirdukkkkk avatar"
         className={styles.avatar}
@@ -13,6 +14,7 @@ const Avatar = ({ width, height }: AvatarProps) => (
         width={width}
         height={height}
         src="/avatar.webp"
+        onClick={onClick}
     />
 );
 

@@ -1,19 +1,25 @@
 {
   "type": "module",
   "name": "mirdukkkkk.space",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "main": "src/index.tsx",
   "scripts": {
-    "dev": "vite --host 0.0.0.0 --port 8081",
     "build": "vite build",
-    "preview": "vite preview --host 0.0.0.0 --port 4750"
+    "dev": "vite --port 8081",
+    "dev:open": "vite --host 0.0.0.0 --port 8081",
+    "preview": "vite preview --port 4750",
+    "preview:open": "vite preview --host 0.0.0.0 --port 4750",
+    "visualize:tree": "vite-bundle-visualizer -c vite.config.ts --sourcemap",
+    "visualize:network": "vite-bundle-visualizer -t network -c vite.config.ts --sourcemap"
   },
   "author": "mirdukkkkk",
   "license": "GPL-3.0-only",
   "private": false,
   "devDependencies": {
     "@preact/preset-vite": "^2.8.2",
+    "@rollup/plugin-replace": "^5.0.7",
     "@types/node": "^20.14.2",
+    "terser": "^5.31.4",
     "typescript": "^5.4.5",
     "vite": "^5.2.13"
   },
@@ -21,5 +27,8 @@
     "@preact/signals": "^1.2.3",
     "preact": "^10.22.0",
     "wouter-preact": "^3.2.0"
+  },
+  "optionalDependencies": {
+    "vite-bundle-visualizer": "^1.2.1"
   }
 }

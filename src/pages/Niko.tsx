@@ -4,6 +4,7 @@ import styles from '../styles/pages/Niko.module.css';
 class Niko extends Component {
     slide = createRef<HTMLDivElement>();
     video = createRef<HTMLVideoElement>();
+    audio = createRef<HTMLAudioElement>();
 
     createImage = (width: number, height: number) => {
         if(!this.video.current) return;
@@ -21,14 +22,8 @@ class Niko extends Component {
     }
 
     playAudio = async() => {
-        const audio = new Audio('/niko/shoeshine.ogg');
-        Object.assign(audio, {
-            preload: 'metadata',
-            autoplay: true,
-            loop: true
-        });
-
-        await audio.play();
+        if(!this.audio.current) return;
+        this.audio.current.play();
     }
 
     handleEvent = () => {
@@ -59,6 +54,13 @@ class Niko extends Component {
                     playsinline
                     autoplay
                     muted
+                    loop
+                />
+                <audio
+                    ref={this.audio}
+                    style={{ display: 'none' }}
+                    src="/niko/shoeshine.mp3"
+                    preload="auto"
                     loop
                 />
                 <div
