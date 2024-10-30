@@ -1,10 +1,10 @@
-import styles from './Avatar.module.styl';
+import styles from "./Avatar.module.styl";
 
 type AvatarProps = {
     width: string | number;
     height: string | number;
-    onClick?: () => any
-}
+    onClick?: () => any;
+};
 
 const Avatar = ({ width, height, onClick }: AvatarProps) => (
     <img

@@ -1,28 +1,28 @@
-import {Component, type ComponentChildren, createRef} from "preact";
-import {ColorContext, type ColorManager} from "../../../managers/color";
-import styles from './RainbowSpan.module.styl';
+import { Component, type ComponentChildren, createRef } from "preact";
+import { ColorContext, type ColorManager } from "../../../managers/color";
+import styles from "./RainbowSpan.module.styl";
 
 type RainbowSpanProps = {
     children: ComponentChildren;
-}
+};
 
 class RainbowSpan extends Component {
-    declare context: typeof ColorManager;
     static contextType = ColorContext;
+    declare context: typeof ColorManager;
     reference = createRef<HTMLSpanElement>();
     unsubscribe: (() => void) | null = null;
 
     changeColor = () => {
-        if(!this.reference.current) return;
+        if (!this.reference.current) return;
         this.reference.current.style.color = this.context.color.value;
-    }
+    };
 
     componentDidMount() {
         this.unsubscribe = this.context.color.subscribe(this.changeColor);
     }
 
     componentWillUnmount() {
-        if(!this.unsubscribe) return;
+        if (!this.unsubscribe) return;
         this.unsubscribe();
     }
 

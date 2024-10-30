@@ -1,8 +1,8 @@
-import {Component, Fragment} from "preact";
+import { Component, Fragment } from "preact";
 import Title from "../components/Template/Title/Title";
 import RainbowSpan from "../components/Functional/RainbowSpan/RainbowSpan";
-import skills, {selectedSkills, additional} from "../data/skills";
-import styles from '../styles/pages/Skills.module.styl';
+import skills, { additional, selectedSkills } from "../data/skills";
+import styles from "../styles/pages/Skills.module.styl";
 
 class Skills extends Component {
     render() {
@@ -10,19 +10,18 @@ class Skills extends Component {
             <>
                 <Title>My skills</Title>
                 <p className={styles.skills}>
-                    {skills.map((skill, index) =>
+                    {skills.map((skill, index) => (
                         <Fragment key={index}>
-                            {selectedSkills.includes(skill) ?
-                                <RainbowSpan>{skill}</RainbowSpan> :
+                            {selectedSkills.includes(skill) ? (
+                                <RainbowSpan>{skill}</RainbowSpan>
+                            ) : (
                                 <span>{skill}</span>
-                            }
-                            {(index < skills.length - 1) && ', '}
+                            )}
+                            {index < skills.length - 1 && ", "}
                         </Fragment>
-                    )}
+                    ))}
                 </p>
-                <div className={styles.additional}>
-                    {additional}
-                </div>
+                <div className={styles.additional}>{additional}</div>
             </>
         );
     }

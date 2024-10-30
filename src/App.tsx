@@ -1,16 +1,17 @@
-import {Component} from 'preact';
+import { Component } from "preact";
 
-import {renderExceptions} from "./data/routes";
-import {BackgroundContext, BackgroundManager} from "./managers/background";
-import {ColorContext, ColorManager} from "./managers/color";
+import { renderExceptions } from "./data/routes";
+import { BackgroundContext, BackgroundManager } from "./managers/background";
+import { ColorContext, ColorManager } from "./managers/color";
 import Background from "./components/Background/Background";
 import Header from "./components/Header/Header";
 import Router from "./router";
 
-import './styles/font.styl';
-import './styles/index.styl';
+import "./styles/font.styl";
+import "./styles/index.styl";
+import styles from "./styles/App.module.styl";
 
-import './helloConsole';
+import "./helloConsole";
 
 class App extends Component {
     isException = renderExceptions.includes(window.location.pathname);
@@ -18,12 +19,14 @@ class App extends Component {
     backgroundSwitcher = () => {
         return (
             BackgroundManager.isEnabled.value &&
-            !this.isException
-        ) && <Background
-            starColor={BackgroundManager.starColor.value}
-            starSpeed={BackgroundManager.starSpeed.value}
-        />;
-    }
+            !this.isException && (
+                <Background
+                    starColor={BackgroundManager.starColor.value}
+                    starSpeed={BackgroundManager.starSpeed.value}
+                />
+            )
+        );
+    };
 
     componentWillMount() {
         BackgroundManager.load();
@@ -35,18 +38,13 @@ class App extends Component {
                 <BackgroundContext.Consumer>
                     {this.backgroundSwitcher}
                 </BackgroundContext.Consumer>
-                <div style={{
-                    display: 'flex',
-                    textAlign: 'center',
-                    alignItems: 'center',
-                    flexDirection: 'column'
-                }}>
-                    {!this.isException &&
+                <div className={styles.page_content}>
+                    {!this.isException && (
                         <>
                             <Header />
-                            <div style={{ marginTop: '10vh' }} />
+                            <div className={styles.indent} />
                         </>
-                    }
+                    )}
                     <ColorContext.Provider value={ColorManager}>
                         <Router />
                     </ColorContext.Provider>

@@ -1,14 +1,16 @@
 {
     "compilerOptions": {
-        "target": "ES2022",
+        "target": "ESNext",
         "module": "ESNext",
         "lib": ["ES2020", "DOM", "DOM.Iterable"],
         "moduleResolution": "Bundler",
+        "skipLibCheck": true,
         "noEmit": true,
         "allowJs": true,
         "checkJs": true,
         "jsx": "react-jsx",
         "jsxImportSource": "preact",
+        "verbatimModuleSyntax": true,
         "noFallthroughCasesInSwitch": true,
         "strictNullChecks": true,
         "strict": true,

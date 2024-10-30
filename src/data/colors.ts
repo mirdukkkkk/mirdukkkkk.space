@@ -9,7 +9,7 @@ export const span = {
         "#7fffec" // ocean
     ],
     danger: "#ff3737"
-}
+};
 
 export const star = {
     available: [
@@ -21,4 +21,4 @@ export const star = {
         "#ffc3e7"
     ],
     default: "#ffffff"
-}
+};

@@ -1,5 +1,5 @@
-import {Component} from "preact";
-import {BackgroundContext, BackgroundManager} from "../managers/background";
+import { Component } from "preact";
+import { BackgroundContext, BackgroundManager } from "../managers/background";
 import Avatar from "../components/Avatar/Avatar";
 import Links from "../components/Links/Links";
 import RainbowSpan from "../components/Functional/RainbowSpan/RainbowSpan";
@@ -8,8 +8,8 @@ import Country from "../components/Utility/Country/Country";
 import styles from "../styles/pages/Home.module.styl";
 
 class Home extends Component {
-    declare context: typeof BackgroundManager;
     static contextType = BackgroundContext;
+    declare context: typeof BackgroundManager;
 
     render() {
         return (
@@ -33,8 +33,10 @@ class Home extends Component {
                     </div>
                 </div>
                 <p>node.js, web</p>
-                <p><RainbowSpan>junior</RainbowSpan> developer</p>
-                <Links/>
+                <p>
+                    <RainbowSpan>junior</RainbowSpan> developer
+                </p>
+                <Links />
             </>
         );
     }
