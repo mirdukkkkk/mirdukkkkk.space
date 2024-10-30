@@ -9,22 +9,22 @@ export interface BackgroundData {
 }
 
 export interface LocalStorageMap {
-    clicker: ClickerData;
-    background: BackgroundData
+    background: BackgroundData;
 }
 
 class LocalStorage {
     public static set<K extends keyof LocalStorageMap>(
         key: K,
         value: LocalStorageMap[K],
-        serialize: (value: LocalStorageMap[K]) => string = JSON.stringify) {
-
-        localStorage.setItem(key, serialize(value))
+        serialize: (value: LocalStorageMap[K]) => string = JSON.stringify
+    ) {
+        localStorage.setItem(key, serialize(value));
     }
 
     public static get<K extends keyof LocalStorageMap>(
         key: K,
-        deserialize?: (str: LocalStorageMap[K]) => LocalStorageMap[K]): LocalStorageMap[K] | undefined {
+        deserialize?: (str: LocalStorageMap[K]) => LocalStorageMap[K]
+    ): LocalStorageMap[K] | undefined {
         const item = localStorage.getItem(key);
 
         return item

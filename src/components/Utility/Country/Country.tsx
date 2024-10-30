@@ -4,10 +4,17 @@ type CountryProps = {
     height: number | string;
     name: string;
     code: string;
-    onClick?: () => any
-}
+    onClick?: () => any;
+};
 
-const Country = ({ className, width, height, name, code, onClick }: CountryProps) => (
+const Country = ({
+    className,
+    width,
+    height,
+    name,
+    code,
+    onClick
+}: CountryProps) => (
     <img
         className={className}
         title={name}

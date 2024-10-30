@@ -1,5 +1,5 @@
-import {Component, createRef} from "preact";
-import styles from '../styles/pages/Niko.module.styl';
+import { Component, createRef } from "preact";
+import styles from "../styles/pages/Niko.module.styl";
 
 class Niko extends Component {
     slide = createRef<HTMLDivElement>();
@@ -7,40 +7,40 @@ class Niko extends Component {
     audio = createRef<HTMLAudioElement>();
 
     createImage = (width: number, height: number) => {
-        if(!this.video.current) return;
+        if (!this.video.current) return;
 
-        const canvas = document.createElement('canvas');
+        const canvas = document.createElement("canvas");
         canvas.width = width;
         canvas.height = height;
 
-        const context = canvas.getContext('2d')!;
+        const context = canvas.getContext("2d")!;
         context.drawImage(this.video.current, 0, 0, width, height);
-        const data = canvas.toDataURL('image/png');
+        const data = canvas.toDataURL("image/png");
 
         canvas.remove();
         return data;
-    }
+    };
 
-    playAudio = async() => {
-        if(!this.audio.current) return;
+    playAudio = async () => {
+        if (!this.audio.current) return;
         this.audio.current.play();
-    }
+    };
 
     handleEvent = () => {
-        if(!this.slide.current) return;
+        if (!this.slide.current) return;
         this.slide.current.remove();
         this.playAudio();
-        document.body.removeEventListener('click', this.handleEvent);
-        document.body.removeEventListener('keydown', this.handleEvent);
-    }
+        document.body.removeEventListener("click", this.handleEvent);
+        document.body.removeEventListener("keydown", this.handleEvent);
+    };
 
     componentWillMount() {
-        document.body.addEventListener('click', this.handleEvent);
-        document.body.addEventListener('keydown', this.handleEvent);
+        document.body.addEventListener("click", this.handleEvent);
+        document.body.addEventListener("keydown", this.handleEvent);
 
         setInterval(() => {
             const niko_cursor = this.createImage(32, 32);
-            document.body.style.cursor = `url('${niko_cursor}'), auto`
+            document.body.style.cursor = `url('${niko_cursor}'), auto`;
         }, 100);
     }
 
@@ -48,7 +48,7 @@ class Niko extends Component {
         return (
             <>
                 <video
-                    src='/niko/niko-oneshot.mp4'
+                    src="/niko/niko-oneshot.mp4"
                     className={styles.video}
                     ref={this.video}
                     playsinline
@@ -58,15 +58,12 @@ class Niko extends Component {
                 />
                 <audio
                     ref={this.audio}
-                    style={{ display: 'none' }}
+                    style={{ display: "none" }}
                     src="/niko/shoeshine.mp3"
                     preload="auto"
                     loop
                 />
-                <div
-                    className={styles.slide}
-                    ref={this.slide}
-                >
+                <div className={styles.slide} ref={this.slide}>
                     <div className={styles.text}>click somewhere</div>
                 </div>
             </>

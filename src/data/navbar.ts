@@ -1,10 +1,10 @@
 export default [
     {
-        name: 'Home',
-        path: '/'
+        name: "Home",
+        path: "/"
     },
     {
-        name: 'Skills',
-        path: '/skills'
+        name: "Skills",
+        path: "/skills"
     }
 ];

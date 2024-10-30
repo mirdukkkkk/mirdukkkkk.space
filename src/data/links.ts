@@ -1,22 +1,9 @@
+const makeLink = (subdomain: string) => `https://${subdomain}.mirdukkkkk.space`;
+
 export default [
-    [
-        'https://life.mirdukkkkk.space',
-        'My Pixel Battle'
-    ],
-    [
-        'https://source.mirdukkkkk.space',
-        'This website repo'
-    ],
-    [
-        'https://github.mirdukkkkk.space',
-        'GitHub'
-    ],
-    [
-        'https://discord.mirdukkkkk.space',
-        'Discord'
-    ],
-    [
-        'https://youtube.mirdukkkkk.space',
-        'YouTube'
-    ]
+    [makeLink("life"), "My Pixel Battle"],
+    [makeLink("source"), "This website repo"],
+    [makeLink("github"), "GitHub"],
+    [makeLink("discord"), "Discord"],
+    [makeLink("youtube"), "YouTube"]
 ];
